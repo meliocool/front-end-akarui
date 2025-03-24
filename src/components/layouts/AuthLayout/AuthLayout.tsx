@@ -2,12 +2,12 @@ import PageHead from "@/components/commons";
 import { ReactNode } from "react";
 
 interface PropTypes {
-  title?: string; // Opsional
   children: ReactNode;
+  title?: string; // Opsional
 }
 
 const AuthLayout = (props: PropTypes) => {
-  const { title, children } = props;
+  const { children, title } = props;
   return (
     <>
       <PageHead title={title}></PageHead>
