@@ -125,8 +125,8 @@ const DataTable = (props: PropTypes) => {
         )}
       </TableHeader>
       <TableBody
-        items={data}
         emptyContent={emptyContent}
+        items={data}
         isLoading={isLoading}
         loadingContent={
           <div className="flex h-full w-full items-center justify-center bg-foreground-700/30 backdrop-blur-sm">
