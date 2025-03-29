@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Button } from "@nextui-org/react";
-import PageHead from "@/components/commons";
+import PageHead from "@/components/commons/PageHead/index";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,4 +1,4 @@
-import PageHead from "@/components/commons";
+import PageHead from "@/components/commons/PageHead/index";
 import { ReactNode } from "react";
 
 interface PropTypes {
