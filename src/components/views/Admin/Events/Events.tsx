@@ -3,12 +3,12 @@ import { Chip, useDisclosure } from "@nextui-org/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Key, ReactNode, useCallback, useEffect } from "react";
-import { CiMenuKebab } from "react-icons/ci";
 import { COLUMN_LIST_EVENT } from "./Events.constants";
 import useEvents from "./useEvents";
-import InputFile from "@/components/ui/InputFile";
 import useChangeUrl from "@/hooks/useChangeUrl";
 import DropdownAction from "@/components/commons/DropdownAction";
+import AddEventModal from "./AddEventModal";
+import DeleteEventModal from "./DeleteEventModal";
 
 const Events = () => {
   const { push, isReady, query } = useRouter();
@@ -63,7 +63,7 @@ const Events = () => {
               onPressButtonDetail={() => push(`/admin/event/${event._id}`)}
               onPressButtonDelete={() => {
                 setSelectedId(`${event._id}`);
-                // deleteCategoryModal.onOpen();
+                deleteEventModal.onOpen();
               }}
             />
           );
@@ -87,16 +87,13 @@ const Events = () => {
           totalPages={dataEvents?.pagination.totalPages}
         />
       )}
-      {/* <AddEventModal
-        refetchCategory={refetchCategory}
-        {...addCategoryModal}
-      />
+      <AddEventModal refetchEvents={refetchEvents} {...addEventModal} />
       <DeleteEventModal
-        refetchCategory={refetchCategory}
+        refetchEvent={refetchEvents}
         selectedId={selectedId}
         setSelectedId={setSelectedId}
-        {...deleteCategoryModal}
-      /> */}
+        {...deleteEventModal}
+      />
     </section>
   );
 };
