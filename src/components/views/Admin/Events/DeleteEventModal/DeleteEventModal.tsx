@@ -76,7 +76,7 @@ const DeleteEventModal = (props: PropTypes) => {
             {isPendingMutateDeleteEvent ? (
               <Spinner size="sm" color="white" />
             ) : (
-              "Delete Category"
+              "Delete Event"
             )}
           </Button>
         </ModalFooter>

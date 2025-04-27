@@ -261,6 +261,19 @@ const AddEventModal = (props: PropTypes) => {
                     </Autocomplete>
                   )}
                 />
+                <Controller
+                  name="address"
+                  control={control}
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      label="Address"
+                      variant="bordered"
+                      isInvalid={errors.latitude !== undefined}
+                      errorMessage={errors.latitude?.message}
+                    />
+                  )}
+                />
                 <div className="flex flex-row gap-2">
                   <Controller
                     name="latitude"

@@ -66,6 +66,7 @@ const useDetailEvent = () => {
     const payload = {
       isOnline: data.isOnline === "true" ? true : false,
       location: {
+        address: `${data.address}`,
         region: `${data.region}`,
         coordinates: [Number(data.latitude), Number(data.longitude)],
       },

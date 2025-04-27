@@ -11,6 +11,7 @@ const schemaUpdateLocation = yup.object().shape({
   isOnline: yup
     .string()
     .required("Please select if it will be online or offline"),
+  address: yup.string().required("Please provide an address!"),
   region: yup.string().required("Please select a region"),
   latitude: yup.string().required("Please input a latitude coordinate"),
   longitude: yup.string().required("Please input a longitude coordinate"),
