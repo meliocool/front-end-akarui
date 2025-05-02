@@ -10,7 +10,7 @@ import * as yup from "yup";
 
 const schema = yup.object().shape({
   title: yup.string().required("Please input a title for the banner!"),
-  isShow: yup.string().required("Please input a description for the banner!"),
+  isShow: yup.string().required("Please select a status for the banner!"),
   image: yup
     .mixed<FileList | string>()
     .required("Please input an image for the banner!"),

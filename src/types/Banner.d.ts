@@ -1,7 +1,7 @@
 interface IBanner {
   _id?: string;
   title?: string;
-  image: string | FileList;
+  image?: string | FileList;
   isShow?: boolean | string;
 }
 
