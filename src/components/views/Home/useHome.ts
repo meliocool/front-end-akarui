@@ -1,9 +1,11 @@
 import {
   LIMIT_BANNER,
+  LIMIT_CATEGORY,
   LIMIT_EVENT,
   PAGE_DEFAULT,
 } from "@/constants/list.constants";
 import bannerServices from "@/services/banner.service";
+import categoryServices from "@/services/category.service";
 import eventServices from "@/services/event.service";
 import { useQuery } from "@tanstack/react-query";
 
@@ -18,6 +20,19 @@ const useHome = () => {
   const { data: dataBanners, isLoading: isLoadingBanners } = useQuery({
     queryKey: ["Banners"],
     queryFn: getBanners,
+    enabled: true,
+  });
+
+  const getCategories = async () => {
+    let params = `limit=${LIMIT_CATEGORY}&page=${PAGE_DEFAULT}`;
+    const result = await categoryServices.getCategories(params);
+    const { data } = result;
+    return data;
+  };
+
+  const { data: dataCategories, isLoading: isLoadingCategories } = useQuery({
+    queryKey: ["Categories"],
+    queryFn: getCategories,
     enabled: true,
   });
 
@@ -49,6 +64,8 @@ const useHome = () => {
     dataBanners,
     dataFeaturedEvents,
     dataLatestEvents,
+    dataCategories,
+    isLoadingCategories,
     isLoadingBanners,
     isLoadingFeaturedEvents,
     isLoadingLatestEvents,
