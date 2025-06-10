@@ -5,6 +5,8 @@ import { IEvent } from "@/types/Event";
 const eventServices = {
   getEvents: (params?: string) => instance.get(`${endpoint.EVENTS}?${params}`),
   getEventById: (id: string) => instance.get(`${endpoint.EVENTS}/${id}`),
+  getEventBySlug: (slug: string) =>
+    instance.get(`${endpoint.EVENTS}/${slug}/slug`),
   addEvent: (payload: IEvent) => instance.post(endpoint.EVENTS, payload),
   searchLocationByRegency: (name: string) =>
     instance.get(`${endpoint.REGION}-search?name=${name}`),
