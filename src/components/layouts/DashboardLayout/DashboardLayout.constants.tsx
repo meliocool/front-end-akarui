@@ -44,20 +44,20 @@ const SIDEBAR_MEMBER = [
   {
     key: "dashboard",
     label: "Dashboard",
-    href: "/member",
+    href: "/member/dashboard",
     icon: <CiGrid41 />,
+  },
+  {
+    key: "transaction",
+    label: "Transactions",
+    href: "/member/transaction",
+    icon: <CiWallet />,
   },
   {
     key: "setting",
     label: "Settings",
     href: "/member/settings",
     icon: <CiSettings />,
-  },
-  {
-    key: "transaction",
-    label: "Transactions",
-    href: "/member/transactions",
-    icon: <CiWallet />,
   },
 ];
 
