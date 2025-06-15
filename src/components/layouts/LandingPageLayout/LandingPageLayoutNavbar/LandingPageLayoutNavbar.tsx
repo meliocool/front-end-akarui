@@ -133,7 +133,7 @@ const LandingPageLayoutNavbar = () => {
                 <DropdownMenu>
                   <DropdownItem
                     key="admin"
-                    href="/admin/dashboard"
+                    href="/admin/event"
                     className={cn({
                       hidden: dataProfile?.role !== "admin",
                     })}
@@ -182,17 +182,24 @@ const LandingPageLayoutNavbar = () => {
             {session.status === "authenticated" ? (
               <>
                 <NavbarMenuItem
-                  className={cn(
-                    "font-medium text-default-700 hover:text-primary",
-                    {
-                      hidden: dataProfile?.role !== "admin",
-                    },
-                  )}
+                  className={cn({
+                    hidden: dataProfile?.role !== "admin",
+                  })}
                 >
-                  <Link href="/admin/dashboard">Admin</Link>
+                  <Link
+                    href="/admin/event"
+                    className="font-medium text-default-700 hover:text-primary"
+                  >
+                    Admin
+                  </Link>
                 </NavbarMenuItem>
-                <NavbarMenuItem className="font-medium text-default-700 hover:text-primary">
-                  <Link href="/member/profile">Profile</Link>
+                <NavbarMenuItem>
+                  <Link
+                    href="/member/profile"
+                    className="font-medium text-default-700 hover:text-primary"
+                  >
+                    Profile
+                  </Link>
                 </NavbarMenuItem>
                 <NavbarMenuItem>
                   <Button

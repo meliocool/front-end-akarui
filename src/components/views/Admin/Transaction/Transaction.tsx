@@ -1,6 +1,5 @@
 import DataTable from "@/components/ui/DataTable";
 import { Chip, useDisclosure } from "@nextui-org/react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { Key, ReactNode, useCallback, useEffect } from "react";
 import { COLUMN_LIST_TRANSACTION } from "./Transaction.constants";

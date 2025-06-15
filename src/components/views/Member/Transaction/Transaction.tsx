@@ -1,6 +1,5 @@
 import DataTable from "@/components/ui/DataTable";
-import { Chip, useDisclosure } from "@nextui-org/react";
-import Image from "next/image";
+import { Chip } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import React, { Key, ReactNode, useCallback, useEffect } from "react";
 import { COLUMN_LIST_TRANSACTION } from "./Transaction.constants";
@@ -9,7 +8,7 @@ import useChangeUrl from "@/hooks/useChangeUrl";
 import DropdownAction from "@/components/commons/DropdownAction";
 import { convertIDR } from "@/utils/currency";
 
-const Banner = () => {
+const Transaction = () => {
   const { push, isReady, query } = useRouter();
   const {
     dataTransactions,
@@ -80,4 +79,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Transaction;
